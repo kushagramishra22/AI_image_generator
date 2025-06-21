@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ed4d2074-c4f5-4c8e-ae5b-e60f30c0204b)# AI Image Generator Tool (JavaScript)
+# AI Image Generator Tool (JavaScript)
 
 Turn your text prompts into stunning images in seconds with this JavaScript-powered AI Image Generator!  
 This project uses the ClipDrop API (text-to-image) to generate images from user input, providing a simple web interface to create, view, and download AI-generated images.
@@ -13,8 +13,7 @@ This project uses the ClipDrop API (text-to-image) to generate images from user 
 
 ## 🚀 Demo
 
-![AI Image Generator Screenshot](![image](https://github.com/user-attachments/assets/71576d74-b39e-4211-a716-4015d3613ce7)
-)  
+![AI Image Generator Screenshot]![image](https://github.com/user-attachments/assets/ed4d2074-c4f5-4c8e-ae5b-e60f30c0204b)
 _Example of the AI Image Generator interface._
 
 ## 🛠️ Installation & Setup
