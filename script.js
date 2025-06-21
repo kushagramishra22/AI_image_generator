@@ -1,7 +1,7 @@
 const generateForm = document.querySelector(".generate-form");
 const imageGallery = document.querySelector(".image-gallery");
 
-const OPENAI_API_KEY = "5445ef78ccf30276bc057e882ecc260e37d1246f7d19c133696a0aac4b389c2bceea88ba6312848ae9c7c60f765509fc";
+const OPENAI_API_KEY = "9b853486ea70c1ed45f3d0565190a8d77d414f3e7f6f4f216d4cd0d36244958b97a64893eb7d38b4a440d1d31d158305";
 
 
 const updateImageCard = (imgDataArray) =>{
@@ -13,21 +13,28 @@ const updateImageCard = (imgDataArray) =>{
          imgElement.src = dataUrl;
 
         // when the image is loaded remove the loading class
-        imgElement.onload = () =>{
+        imgElement.onload = () => {
             imgCard.classList.remove("loading");
-            downloadBtn.setAttribute("download",`${new Date().getTime()}.jpeg`)
-        }
+
+            // Attach click handler to download button
+            downloadBtn.onclick = () => {
+                const link = document.createElement("a");
+                link.href = dataUrl;
+                link.download = `${new Date().getTime()}.jpeg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+        };
     });
 }
-
-
 
 const generateAiImage = async (userPrompt, userImgQuantity) => {
     try {
         // Create a FormData object and append the prompt
         const formData = new FormData();
         formData.append('prompt', userPrompt);
-        formData.append('n', parseInt(userImgQuantity)); // corrected parameter name
+        //formData.append('n', parseInt(userImgQuantity)); // corrected parameter name
 
         // Make a POST request using fetch
         const response = await fetch('https://clipdrop-api.co/text-to-image/v1', {
